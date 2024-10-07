@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <p style="margin-bottom: 2px;"><strong>Hi, {{user.f_name}} {{user.l_name}}</strong></p>
+        <h2 style="margin-bottom: 5px;">Your monthly report is here</h2>
+        <h3> Books pending your approval </h3>
+        <table class="table" style="margin-bottom: 5px;">
+            <thead>
+                <tr>
+                    <th scope="col"> # </th>
+                    <th scope="col"> User Id </th>
+                    <th scope="col"> Book Requested </th>
+                </tr>
+            </thead>
+            {% set nsp = namespace(i=0) %}
+            {% for user1 in users %}
+                {% for book in user1.books_requested %}
+                {% set nsp.i = nsp.i+1 %}
+                <tbody>
+                    <tr>
+                        <th scope="row" > {{nsp.i}} </td>
+                        <td> {{user1.usr_id}} </td>
+                        <td> 
+                            {{book.book_name}}
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            {% endfor %}
+        </table>
+
+        <h3> Sections added in this month </h3>
+        <table class="table" style="margin-bottom: 5px;">
+            <thead>
+                <tr>
+                    <th scope="col"> # </th>
+                    <th scope="col"> Section Name </th>
+                    <th scope="col"> Date Created </th>
+                </tr>
+            </thead>
+            {% set nsp = namespace(i=0) %}
+            {% for sec in latest_sections %}
+                {% set nsp.i = nsp.i+1 %}
+                <tbody>
+                    <tr>
+                        <th scope="row" > {{nsp.i}} </td>
+                        <td> {{sec.section_name}} </td>
+                        <td> 
+                            {{sec.date_created.date()}}
+                        </td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+        <h3> Books added in this month </h3>
+        <table class="table" style="margin-bottom: 5px;">
+            <thead>
+                <tr>
+                    <th scope="col"> # </th>
+                    <th scope="col"> Book Name </th>
+                    <th scope="col"> Date Added </th>
+                </tr>
+            </thead>
+            {% set nsp = namespace(i=0) %}
+            {% for book in latest_books %}
+                {% set nsp.i = nsp.i+1 %}
+                <tbody>
+                    <tr>
+                        <th scope="row" > {{nsp.i}} </td>
+                        <td> {{book.book_name}} </td>
+                        <td> 
+                            {{book.date_added.date()}}
+                        </td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+        <h3> Feedbacks added in this month </h3>
+        <table class="table" style="margin-bottom: 5px;">
+            <thead>
+                <tr>
+                    <th scope="col"> # </th>
+                    <th scope="col"> User Name </th>
+                    <th scope="col"> Book Name </th>
+                    <th scope="col"> Feedback </th>
+                    <th scope="col"> Date Added </th>
+                </tr>
+            </thead>
+            {% set nsp = namespace(i=0) %}
+            {% for fdb in latest_fdbks %}
+                {% set nsp.i = nsp.i+1 %}
+                <tbody>
+                    <tr>
+                        <th scope="row" > {{nsp.i}} </td>
+                        <td> {{fdb[0]}} </td>
+                        <td> {{fdb[1]}} </td>
+                        <td> {{fdb[2]}} </td>
+                        <td> {{fdb[3]}} </td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <p ><strong>Hi, {{user.f_name}} {{user.l_name}}</strong></p>
+        <p><strong>Did you visit bookit toay ? If not visit now </strong></p>
+        <img src="https://i.postimg.cc/FzGksjn2/finalbg-1.png" class="mb-5"/>
+        {% if books_owned | length > 0 %}
+            <h3 class="mb-3">Books You Own</h1>
+            <table class="table table-bordered text-center table-striped" style="width: 40%;">
+                <thead class="thead-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col"> Days left to expire  </th>
+                </thead>
+                {% set nsp=namespace(i=0) %}
+                {% for item in books_owned %}  
+                    {% set nsp.i = nsp.i + 1 %}
+                    <tbody>
+                        <tr>
+                            <th> {{ nsp.i }} </th>
+                            <td> {{ item[0] }} </td>
+                            {% if item[1] >= 7 %}
+                                <td> expired </td>
+                            {% else %}
+                                <td> {{ 7 - item[1] }} </td>
+                            {% endif %}
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
+            <strong>Books issued today: </strong>
+            {% for item in books_owned %}  
+                {% if item[1] < 1 %}
+                    {{item[0]}}
+                    {% if not loop.last %}
+                        ,
+                    {% endif %}
+                {% endif %}
+                {% else %}
+                    No books issued today
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
