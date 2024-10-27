@@ -1,8 +1,8 @@
 from datetime import timedelta
-SECRET_KEY = "9J3a8cwcSzuZU7wErE6aqttewo2nDXSR4GeK5GPDlHY"
+SECRET_KEY = "9J3a8cwcSzuZU7wErE6aqttewo2nDXSR4GeK5GPDlHY" ## Don't ever keep your secrets exposed in production 
 DEBUG = True
 SQLALCHEMY_DATABASE_URI = "sqlite:///database.sqlite3"
-JWT_SECRET_KEY = "bc1712dfed677aa98ed886e0"
+JWT_SECRET_KEY = "bc1712dfed677aa98ed886e0" ## Don't ever keep your secrets exposed in production 
 JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)
 CACHE_TYPE = "RedisCache"
 CACHE_DEFAULT_TIMEOUT = 1800
