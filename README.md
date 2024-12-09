@@ -1,4 +1,4 @@
-# Bookit
+# Bookit V2
 ## A minimalistic e-library application
 The project discussed below aims to provide an interface for an e-library (i.e. a Library Management System). This application can be used by both users and librarians.
 Most of the functionalities remain the same as the previous version wherein the user can request, read and return a book (a book can be accessed for a maximum of 7 days after which access will be revoked),
