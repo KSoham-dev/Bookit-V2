@@ -1,15 +1,15 @@
 <template>
     <Navbar></Navbar>
-    <div class="container mainhome" action="/login" style="margin-top: 50px; text-align: center;">
+    <div class="container mainhome mb-5" action="/login" style="margin-top: 50px;">
         <template v-for="(section, i) in sections">
             <template v-if="Object.keys(section.section_books).length  > 0">
+            <div class="section-details pb-5" style="padding-left: 50px;">
                 <strong>Section: {{ section.section_name }}</strong><br/><br/>
                 {{section.section_description}}
+            </div>
             </template>
             <div class="row" style="margin-bottom: 50px; text-align: center;">
                 <template v-for="(book, j) in section.section_books">
-                    <div class="row colimghome">
-                        <div class="col"></div>
                         <div class="col" style="padding-left: 80px;">
                             <router-link :to="`/book_info/${j}`">
                                 <div class="divincol">
@@ -20,8 +20,6 @@
                                 </div>
                             </router-link>
                         </div>
-                        <div class="col"></div>
-                    </div>
                 </template>
             </div>
         </template>
