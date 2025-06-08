@@ -79,7 +79,7 @@ export default {
     }, 
     methods:{
         issuedReport(){
-            fetch("http://127.0.0.1:5000/lib/issued_books_csv",{
+            fetch("https://sohamk.pythonanywhere.com/lib/issued_books_csv",{
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",
@@ -96,7 +96,7 @@ export default {
             })
         },
         reqReport(){
-            fetch("http://127.0.0.1:5000/lib/requested_books_csv",{
+            fetch("https://sohamk.pythonanywhere.com/lib/requested_books_csv",{
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",

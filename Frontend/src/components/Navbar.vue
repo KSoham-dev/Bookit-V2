@@ -130,7 +130,7 @@ export default {
         }
     }, 
     mounted(){
-        fetch("http://127.0.0.1:5000/auth/myinfo",{
+        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -157,7 +157,7 @@ export default {
             })
             .then((willLogout) => {
                 if (willLogout) {
-                    fetch('http://127.0.0.1:5000/auth/logout',{
+                    fetch('https://sohamk.pythonanywhere.com/auth/logout',{
                         method: 'GET',
                         headers: { 
                             'Authorization': `Bearer ${localStorage.getItem('ac_token')}`,
@@ -165,7 +165,7 @@ export default {
                     })
                     .then(res => {
                         localStorage.removeItem('ac_token')
-                        fetch('http://127.0.0.1:5000/auth/logout',{
+                        fetch('https://sohamk.pythonanywhere.com/auth/logout',{
                         method: 'GET',
                         headers: { 
                             'Authorization': `Bearer ${localStorage.getItem('ref_token')}`,
@@ -198,7 +198,7 @@ export default {
         },
         search(ev){
             this.resultFlag = true
-            fetch("http://127.0.0.1:5000/user/search",{
+            fetch("https://sohamk.pythonanywhere.com/user/search",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

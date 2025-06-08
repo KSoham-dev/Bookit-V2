@@ -150,7 +150,7 @@
             }
         },
         mounted(){
-            fetch("http://127.0.0.1:5000/authors",{
+            fetch("https://sohamk.pythonanywhere.com/authors",{
                 method: "GET",
                 headers:{
                     "Content-Type": "application/json",
@@ -172,7 +172,7 @@
                 const data = new FormData(ev.target);
                 const dataJson = Object.fromEntries(data.entries());
                 let dataToSend = {...dataJson, author_id: this.updt_author_id}
-                fetch("http://127.0.0.1:5000/authors/update_author",{ 
+                fetch("https://sohamk.pythonanywhere.com/authors/update_author",{ 
                     method: "POST",
                     headers:{
                         "Content-Type": "application/json",
@@ -196,7 +196,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete) {
-                        fetch(`http://127.0.0.1:5000/authors/delete_author`,{
+                        fetch(`https://sohamk.pythonanywhere.com/authors/delete_author`,{
                             method: "POST",
                             headers:{
                                 "Content-Type": "application/json",
@@ -214,7 +214,7 @@
             addauthor(ev){
                 const data = new FormData(ev.target);
                 const dataJson = Object.fromEntries(data.entries());
-                fetch("http://127.0.0.1:5000/authors/add_author",{
+                fetch("https://sohamk.pythonanywhere.com/authors/add_author",{
                     method: "POST",
                     headers:{
                         "Content-Type": "application/json",

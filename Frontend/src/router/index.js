@@ -146,7 +146,7 @@ router.beforeEach((to, from, next) => {
   if (to.path == '/' || to.path == '/lib/login' || to.path == '/user/signup') {
       next();
   }else{
-        fetch('http://127.0.0.1:5000/auth/refresh_access',{
+        fetch('https://sohamk.pythonanywhere.com/auth/refresh_access',{
           method: 'GET',
           headers: {
               Authorization: `Bearer ${localStorage.getItem('ref_token')}`

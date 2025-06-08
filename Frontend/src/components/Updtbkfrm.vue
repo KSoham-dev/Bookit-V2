@@ -106,7 +106,7 @@ export default {
                     l_aut.push(option.value);
                 }
                 let dataToSend = {...dataJson, "content": content.slice(28), "authors": l_aut, "book_id":this.bk_id}
-                fetch("http://127.0.0.1:5000/books/update_book",{
+                fetch("https://sohamk.pythonanywhere.com/books/update_book",{
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -141,7 +141,7 @@ export default {
                         l_aut.push(option.value);
                     }
                     let dataToSend = {...dataJson, "authors":l_aut, content:"", "book_id":this.bk_id}
-                    fetch("http://127.0.0.1:5000/books/update_book",{
+                    fetch("https://sohamk.pythonanywhere.com/books/update_book",{
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -168,7 +168,7 @@ export default {
         }
     },
     mounted(){
-        fetch("http://127.0.0.1:5000/sections/get_names",{
+        fetch("https://sohamk.pythonanywhere.com/sections/get_names",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -179,7 +179,7 @@ export default {
         }).then((data) => {
             this.sections = data;
         })
-        fetch("http://127.0.0.1:5000/authors/get_names",{
+        fetch("https://sohamk.pythonanywhere.com/authors/get_names",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

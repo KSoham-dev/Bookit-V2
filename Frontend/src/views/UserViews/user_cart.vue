@@ -76,7 +76,7 @@ import { saveAs } from 'file-saver';
 export default{
     name: "Cart",
     mounted(){
-        fetch("http://127.0.0.1:5000/user/check_cart",{
+        fetch("https://sohamk.pythonanywhere.com/user/check_cart",{
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                     "Content-Type": "application/json"
@@ -85,7 +85,7 @@ export default{
             }).then(res => {return res.json()})
             .then(data => {
                 if (data.msg == "Cart is not present") {
-                    fetch("http://127.0.0.1:5000/user/create_cart",{
+                    fetch("https://sohamk.pythonanywhere.com/user/create_cart",{
                         headers: {
                             "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                             "Content-Type": "application/json"
@@ -93,7 +93,7 @@ export default{
                         method: "POST"
                     }).then(res => {return res.json()})
                     .then(() => {
-                        fetch("http://127.0.0.1:5000/user/get_cart",{
+                        fetch("https://sohamk.pythonanywhere.com/user/get_cart",{
                         headers: {
                             "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                             "Content-Type": "application/json"
@@ -106,7 +106,7 @@ export default{
                     })
                 }
             })
-            fetch("http://127.0.0.1:5000/user/get_cart",{
+            fetch("https://sohamk.pythonanywhere.com/user/get_cart",{
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                     "Content-Type": "application/json"
@@ -138,7 +138,7 @@ export default{
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete) {
-                        fetch("http://127.0.0.1:5000/user/remove_from_cart",{
+                        fetch("https://sohamk.pythonanywhere.com/user/remove_from_cart",{
                             headers: {
                                 "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                                 "Content-Type": "application/json"

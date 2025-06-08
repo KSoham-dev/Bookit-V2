@@ -71,7 +71,7 @@ import Libmenu from '@/components/Libmenu.vue';
 export default {
     name: "allIssuedBooks",
     mounted(){
-        fetch('http://127.0.0.1:5000/lib/get_all_issued_books', {
+        fetch('https://sohamk.pythonanywhere.com/lib/get_all_issued_books', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ export default {
                 dangerMode: true,
             }).then((willRevoke) => {
                 if (willRevoke) {
-                    fetch('http://127.0.0.1:5000/lib/revoke_issued_book', {
+                    fetch('https://sohamk.pythonanywhere.com/lib/revoke_issued_book', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

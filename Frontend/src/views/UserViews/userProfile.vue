@@ -102,7 +102,7 @@ import Usermenu from '@/components/Usermenu.vue';
 export default {
     name: "userProfile",
     mounted(){
-        fetch("http://127.0.0.1:5000/auth/myinfo",{
+        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -129,7 +129,7 @@ export default {
             const data = new FormData(ev.target);
             const dataJson = Object.fromEntries(data.entries());
             const dataToSend = JSON.stringify({...dataJson});
-            fetch("http://127.0.0.1:5000/auth/updtusr",{
+            fetch("https://sohamk.pythonanywhere.com/auth/updtusr",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

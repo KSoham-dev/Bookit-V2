@@ -70,7 +70,7 @@
     export default {
         name: "userBook",
         mounted() {
-            fetch("http://127.0.0.1:5000/user/view_req_books",{
+            fetch("https://sohamk.pythonanywhere.com/user/view_req_books",{
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -102,7 +102,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete) {
-                        fetch(`http://127.0.0.1:5000/user/cancel_book_req`,{
+                        fetch(`https://sohamk.pythonanywhere.com/user/cancel_book_req`,{
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",

@@ -152,7 +152,7 @@ export default{
         }
     },
     mounted(){
-        fetch("http://127.0.0.1:5000/sections",{
+        fetch("https://sohamk.pythonanywhere.com/sections",{
             method: "GET",
             headers:{
                 "Content-Type": "application/json",
@@ -174,7 +174,7 @@ export default{
             const data = new FormData(ev.target);
             const dataJson = Object.fromEntries(data.entries());
             let dataToSend = {...dataJson, section_id: this.updt_section_id}
-            fetch("http://127.0.0.1:5000/sections/update_section",{ 
+            fetch("https://sohamk.pythonanywhere.com/sections/update_section",{ 
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -198,7 +198,7 @@ export default{
                 dangerMode: true,
             }).then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://127.0.0.1:5000/sections/delete_section`,{
+                    fetch(`https://sohamk.pythonanywhere.com/sections/delete_section`,{
                         method: "POST",
                         headers:{
                             "Content-Type": "application/json",
@@ -216,7 +216,7 @@ export default{
         addSection(ev){
             const data = new FormData(ev.target);
             const dataJson = Object.fromEntries(data.entries());
-            fetch("http://127.0.0.1:5000/sections/add_section",{
+            fetch("https://sohamk.pythonanywhere.com/sections/add_section",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",

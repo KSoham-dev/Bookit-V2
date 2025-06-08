@@ -60,7 +60,7 @@
     export default {
     name: "userProfile",
     mounted(){
-        fetch("http://127.0.0.1:5000/auth/myinfo",{
+        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

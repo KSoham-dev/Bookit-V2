@@ -74,7 +74,7 @@ export default {
         }
     },
     mounted(){
-        fetch("http://127.0.0.1:5000/auth/myinfo",{
+        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default {
             this.usr_id = data.user_details.usr_id;
         })
         .catch(err => console.log(err))
-        fetch("http://127.0.0.1:5000/sections",{
+        fetch("https://sohamk.pythonanywhere.com/sections",{
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

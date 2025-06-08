@@ -71,7 +71,7 @@ export default {
         Libmenu
     },
     mounted(){
-        fetch('http://127.0.0.1:5000/lib/get_stats', {
+        fetch('https://sohamk.pythonanywhere.com/lib/get_stats', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

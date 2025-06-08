@@ -78,7 +78,7 @@ import Libmenu from '@/components/Libmenu.vue';
 export default {
     name: "LibAllReqBooks",
     mounted(){
-        fetch("http://127.0.0.1:5000/lib/get_all_req_books", {
+        fetch("https://sohamk.pythonanywhere.com/lib/get_all_req_books", {
             method: "GET",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("ac_token"),
@@ -103,7 +103,7 @@ export default {
     },
     methods: {
         acceptReq(usr_id,book_id){
-            fetch("http://127.0.0.1:5000/lib/approve_request", {
+            fetch("https://sohamk.pythonanywhere.com/lib/approve_request", {
                 method: "POST",
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("ac_token"),
@@ -127,7 +127,7 @@ export default {
             })
         },
         rejectReq(usr_id,book_id){
-            fetch("http://127.0.0.1:5000/lib/reject_request", {
+            fetch("https://sohamk.pythonanywhere.com/lib/reject_request", {
                 method: "POST",
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem("ac_token"),

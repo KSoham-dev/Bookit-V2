@@ -3,7 +3,7 @@ import router from '@/router/index.js';
 const checkExpiry = function() {
     let info;
     let intervalId;
-    fetch('http://127.0.0.1:5000/auth/myinfo',{
+    fetch('https://sohamk.pythonanywhere.com/auth/myinfo',{
                 method: 'GET',
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('ac_token')}`
@@ -22,7 +22,7 @@ const checkExpiry = function() {
                 clearInterval(Number(storedIntervalId));
             }
             intervalId = setInterval( () => {
-                fetch('http://127.0.0.1:5000/auth/myinfo',{
+                fetch('https://sohamk.pythonanywhere.com/auth/myinfo',{
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('ac_token')}`
@@ -44,7 +44,7 @@ const checkExpiry = function() {
                         })
                         .then((keepLohgedIn) => {
                             if (keepLohgedIn) {
-                                fetch('http://127.0.0.1:5000/auth/refresh_access',{
+                                fetch('https://sohamk.pythonanywhere.com/auth/refresh_access',{
                                     method: 'GET',
                                     headers: {
                                         Authorization: `Bearer ${localStorage.getItem('ref_token')}`
