@@ -7,9 +7,12 @@ JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)
 CACHE_TYPE = "RedisCache"
 CACHE_DEFAULT_TIMEOUT = 1800
 CACHE_KEY_PREFIX = "bookitv2_cache"
-CACHE_REDIS_URL = "redis://localhost:6379/1"
-CELERY_BROKER_URL = "redis://localhost:6379/2"
-CELERY_RESULT_BACKEND = "redis://localhost:6379/3"
+# CACHE_REDIS_URL = "redis://localhost:6379/1"
+# CELERY_BROKER_URL = "redis://localhost:6379/2"
+# CELERY_RESULT_BACKEND = "redis://localhost:6379/3"
+CACHE_REDIS_URL = "redis://red-d1436jruibrs73c23cp0:6379/1"
+CELERY_BROKER_URL = "redis://red-d1436jruibrs73c23cp0:6379/2"
+CELERY_RESULT_BACKEND = "redis://red-d1436jruibrs73c23cp0:6379/3"
 CELERY_TIMEZONE = "Asia/Kolkata"
 MAIL_SERVER = "smtp.gmail.com"
 MAIL_PORT = 587
