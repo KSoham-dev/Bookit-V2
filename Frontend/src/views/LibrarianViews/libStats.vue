@@ -71,7 +71,7 @@ export default {
         Libmenu
     },
     mounted(){
-        fetch('https://sohamk.pythonanywhere.com/lib/get_stats', {
+        fetch('https://bookit-v2-s4t8.onrender.com/lib/get_stats', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

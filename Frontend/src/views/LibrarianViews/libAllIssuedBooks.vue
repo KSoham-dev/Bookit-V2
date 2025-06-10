@@ -71,7 +71,7 @@ import Libmenu from '@/components/Libmenu.vue';
 export default {
     name: "allIssuedBooks",
     mounted(){
-        fetch('https://sohamk.pythonanywhere.com/lib/get_all_issued_books', {
+        fetch('https://bookit-v2-s4t8.onrender.com/lib/get_all_issued_books', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ export default {
                 dangerMode: true,
             }).then((willRevoke) => {
                 if (willRevoke) {
-                    fetch('https://sohamk.pythonanywhere.com/lib/revoke_issued_book', {
+                    fetch('https://bookit-v2-s4t8.onrender.com/lib/revoke_issued_book', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

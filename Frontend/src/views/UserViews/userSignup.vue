@@ -47,7 +47,7 @@ export default {
             const data = new FormData(ev.target);
             const dataJson = Object.fromEntries(data.entries());
             const dataToSend = JSON.stringify({...dataJson, role: 'user'});
-            fetch('https://sohamk.pythonanywhere.com/auth/user/signup', {
+            fetch('https://bookit-v2-s4t8.onrender.com/auth/user/signup', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'

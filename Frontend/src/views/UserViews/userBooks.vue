@@ -87,7 +87,7 @@ import swal from 'sweetalert'
 export default {
     name: "userBook",
     mounted() {
-        fetch("https://sohamk.pythonanywhere.com/user/books",{
+        fetch("https://bookit-v2-s4t8.onrender.com/user/books",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -119,7 +119,7 @@ export default {
                 dangerMode: true,
             }).then((willDelete) => {
                 if (willDelete) {
-                    fetch(`https://sohamk.pythonanywhere.com/user/return_book`,{
+                    fetch(`https://bookit-v2-s4t8.onrender.com/user/return_book`,{
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",

@@ -55,7 +55,7 @@
     export default {
     name: "userProfile",
     mounted(){
-        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
+        fetch("https://bookit-v2-s4t8.onrender.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

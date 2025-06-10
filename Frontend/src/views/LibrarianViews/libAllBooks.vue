@@ -124,7 +124,7 @@ import swal from 'sweetalert'
 export default {
     name: "allBooks",
     mounted() {
-        fetch("https://sohamk.pythonanywhere.com/books",{
+        fetch("https://bookit-v2-s4t8.onrender.com/books",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -165,7 +165,7 @@ export default {
             }).then((willDelete) => {
                 if(willDelete){
                     
-                    fetch("https://sohamk.pythonanywhere.com/books/delete_book",{
+                    fetch("https://bookit-v2-s4t8.onrender.com/books/delete_book",{
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -251,7 +251,7 @@ export default {
     name: "book_info",
     mounted(){
         this.book_id = parseInt(this.$route.params.j,10)
-        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
+        fetch("https://bookit-v2-s4t8.onrender.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -263,7 +263,7 @@ export default {
             this.usr_id = data.user_details.usr_id
     })
     .catch(err => console.log(err))
-    fetch("https://sohamk.pythonanywhere.com/user/user_book_info",{
+    fetch("https://bookit-v2-s4t8.onrender.com/user/user_book_info",{
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
             "Content-Type": "application/json"
@@ -275,7 +275,7 @@ export default {
         this.books_req = data.requested_books
     })
     .catch(err => console.log(err))
-    fetch(`https://sohamk.pythonanywhere.com/books/book`,{
+    fetch(`https://bookit-v2-s4t8.onrender.com/books/book`,{
         headers: {
             "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
             "Content-Type": "application/json"
@@ -325,7 +325,7 @@ export default {
             },
             fetch_section_books(){
             if(this.book.book_section){
-                fetch(`https://sohamk.pythonanywhere.com/sections/section`,{
+                fetch(`https://bookit-v2-s4t8.onrender.com/sections/section`,{
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                     "Content-Type": "application/json"
@@ -348,7 +348,7 @@ export default {
     },
     methods: {
         addItemToCart() {
-            fetch("https://sohamk.pythonanywhere.com/user/check_cart",{
+            fetch("https://bookit-v2-s4t8.onrender.com/user/check_cart",{
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                     "Content-Type": "application/json"
@@ -357,7 +357,7 @@ export default {
             }).then(res => {return res.json()})
             .then(data => {
                 if (data.msg == "Cart is not present") {
-                    fetch("https://sohamk.pythonanywhere.com/user/create_cart",{
+                    fetch("https://bookit-v2-s4t8.onrender.com/user/create_cart",{
                         headers: {
                             "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                             "Content-Type": "application/json"
@@ -365,7 +365,7 @@ export default {
                         method: "POST"
                     }).then(res => {return res.json()})
                     .then(data => {
-                        fetch("https://sohamk.pythonanywhere.com/user/add_to_cart",{
+                        fetch("https://bookit-v2-s4t8.onrender.com/user/add_to_cart",{
                             headers: {
                                 "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                                 "Content-Type": "application/json"
@@ -384,7 +384,7 @@ export default {
                     })
                     .catch(err => console.log(err))
                 } else{
-                        fetch("https://sohamk.pythonanywhere.com/user/add_to_cart",{
+                        fetch("https://bookit-v2-s4t8.onrender.com/user/add_to_cart",{
                                 headers: {
                                     "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                                     "Content-Type": "application/json"
@@ -404,7 +404,7 @@ export default {
             })
         },
         requestBook(){
-            fetch("https://sohamk.pythonanywhere.com/user/request_book",{
+            fetch("https://bookit-v2-s4t8.onrender.com/user/request_book",{
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                     "Content-Type": "application/json"
@@ -432,7 +432,7 @@ export default {
                 dangerMode: true,
             }).then((willDelete) => {
                 if (willDelete) {
-                        fetch("https://sohamk.pythonanywhere.com/user/remove_feedback",{
+                        fetch("https://bookit-v2-s4t8.onrender.com/user/remove_feedback",{
                         headers: {
                             "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                             "Content-Type": "application/json"
@@ -453,7 +453,7 @@ export default {
             const data = new FormData(e.target);
             const feedback = Object.fromEntries(data.entries()).fdb;
             this.formflag = false
-            fetch("https://sohamk.pythonanywhere.com/user/add_feedback",{
+            fetch("https://bookit-v2-s4t8.onrender.com/user/add_feedback",{
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("ac_token")}`,
                     "Content-Type": "application/json"

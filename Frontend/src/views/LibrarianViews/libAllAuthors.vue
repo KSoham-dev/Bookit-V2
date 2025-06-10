@@ -150,7 +150,7 @@
             }
         },
         mounted(){
-            fetch("https://sohamk.pythonanywhere.com/authors",{
+            fetch("https://bookit-v2-s4t8.onrender.com/authors",{
                 method: "GET",
                 headers:{
                     "Content-Type": "application/json",
@@ -172,7 +172,7 @@
                 const data = new FormData(ev.target);
                 const dataJson = Object.fromEntries(data.entries());
                 let dataToSend = {...dataJson, author_id: this.updt_author_id}
-                fetch("https://sohamk.pythonanywhere.com/authors/update_author",{ 
+                fetch("https://bookit-v2-s4t8.onrender.com/authors/update_author",{ 
                     method: "POST",
                     headers:{
                         "Content-Type": "application/json",
@@ -196,7 +196,7 @@
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete) {
-                        fetch(`https://sohamk.pythonanywhere.com/authors/delete_author`,{
+                        fetch(`https://bookit-v2-s4t8.onrender.com/authors/delete_author`,{
                             method: "POST",
                             headers:{
                                 "Content-Type": "application/json",
@@ -214,7 +214,7 @@
             addauthor(ev){
                 const data = new FormData(ev.target);
                 const dataJson = Object.fromEntries(data.entries());
-                fetch("https://sohamk.pythonanywhere.com/authors/add_author",{
+                fetch("https://bookit-v2-s4t8.onrender.com/authors/add_author",{
                     method: "POST",
                     headers:{
                         "Content-Type": "application/json",

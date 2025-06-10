@@ -146,7 +146,7 @@ router.beforeEach((to, from, next) => {
   if (to.path == '/' || to.path == '/lib/login' || to.path == '/user/signup') {
       next();
   }else{
-        fetch('https://sohamk.pythonanywhere.com/auth/refresh_access',{
+        fetch('https://bookit-v2-s4t8.onrender.com/auth/refresh_access',{
           method: 'GET',
           headers: {
               Authorization: `Bearer ${localStorage.getItem('ref_token')}`

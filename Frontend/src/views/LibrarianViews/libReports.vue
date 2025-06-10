@@ -79,7 +79,7 @@ export default {
     }, 
     methods:{
         issuedReport(){
-            fetch("https://sohamk.pythonanywhere.com/lib/issued_books_csv",{
+            fetch("https://bookit-v2-s4t8.onrender.com/lib/issued_books_csv",{
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",
@@ -96,7 +96,7 @@ export default {
             })
         },
         reqReport(){
-            fetch("https://sohamk.pythonanywhere.com/lib/requested_books_csv",{
+            fetch("https://bookit-v2-s4t8.onrender.com/lib/requested_books_csv",{
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",

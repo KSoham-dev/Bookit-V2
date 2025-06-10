@@ -102,7 +102,7 @@ import Usermenu from '@/components/Usermenu.vue';
 export default {
     name: "userProfile",
     mounted(){
-        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
+        fetch("https://bookit-v2-s4t8.onrender.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -129,7 +129,7 @@ export default {
             const data = new FormData(ev.target);
             const dataJson = Object.fromEntries(data.entries());
             const dataToSend = JSON.stringify({...dataJson});
-            fetch("https://sohamk.pythonanywhere.com/auth/updtusr",{
+            fetch("https://bookit-v2-s4t8.onrender.com/auth/updtusr",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -3,7 +3,7 @@ import router from '@/router/index.js';
 const checkExpiry = function() {
     let info;
     let intervalId;
-    fetch('https://sohamk.pythonanywhere.com/auth/myinfo',{
+    fetch('https://bookit-v2-s4t8.onrender.com/auth/myinfo',{
                 method: 'GET',
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('ac_token')}`
@@ -22,7 +22,7 @@ const checkExpiry = function() {
                 clearInterval(Number(storedIntervalId));
             }
             intervalId = setInterval( () => {
-                fetch('https://sohamk.pythonanywhere.com/auth/myinfo',{
+                fetch('https://bookit-v2-s4t8.onrender.com/auth/myinfo',{
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('ac_token')}`
@@ -44,7 +44,7 @@ const checkExpiry = function() {
                         })
                         .then((keepLohgedIn) => {
                             if (keepLohgedIn) {
-                                fetch('https://sohamk.pythonanywhere.com/auth/refresh_access',{
+                                fetch('https://bookit-v2-s4t8.onrender.com/auth/refresh_access',{
                                     method: 'GET',
                                     headers: {
                                         Authorization: `Bearer ${localStorage.getItem('ref_token')}`

@@ -130,7 +130,7 @@ export default {
         }
     }, 
     mounted(){
-        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
+        fetch("https://bookit-v2-s4t8.onrender.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -157,7 +157,7 @@ export default {
             })
             .then((willLogout) => {
                 if (willLogout) {
-                    fetch('https://sohamk.pythonanywhere.com/auth/logout',{
+                    fetch('https://bookit-v2-s4t8.onrender.com/auth/logout',{
                         method: 'GET',
                         headers: { 
                             'Authorization': `Bearer ${localStorage.getItem('ac_token')}`,
@@ -165,7 +165,7 @@ export default {
                     })
                     .then(res => {
                         localStorage.removeItem('ac_token')
-                        fetch('https://sohamk.pythonanywhere.com/auth/logout',{
+                        fetch('https://bookit-v2-s4t8.onrender.com/auth/logout',{
                         method: 'GET',
                         headers: { 
                             'Authorization': `Bearer ${localStorage.getItem('ref_token')}`,
@@ -198,7 +198,7 @@ export default {
         },
         search(ev){
             this.resultFlag = true
-            fetch("https://sohamk.pythonanywhere.com/user/search",{
+            fetch("https://bookit-v2-s4t8.onrender.com/user/search",{
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

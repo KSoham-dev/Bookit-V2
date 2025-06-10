@@ -152,7 +152,7 @@ export default{
         }
     },
     mounted(){
-        fetch("https://sohamk.pythonanywhere.com/sections",{
+        fetch("https://bookit-v2-s4t8.onrender.com/sections",{
             method: "GET",
             headers:{
                 "Content-Type": "application/json",
@@ -174,7 +174,7 @@ export default{
             const data = new FormData(ev.target);
             const dataJson = Object.fromEntries(data.entries());
             let dataToSend = {...dataJson, section_id: this.updt_section_id}
-            fetch("https://sohamk.pythonanywhere.com/sections/update_section",{ 
+            fetch("https://bookit-v2-s4t8.onrender.com/sections/update_section",{ 
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -198,7 +198,7 @@ export default{
                 dangerMode: true,
             }).then((willDelete) => {
                 if (willDelete) {
-                    fetch(`https://sohamk.pythonanywhere.com/sections/delete_section`,{
+                    fetch(`https://bookit-v2-s4t8.onrender.com/sections/delete_section`,{
                         method: "POST",
                         headers:{
                             "Content-Type": "application/json",
@@ -216,7 +216,7 @@ export default{
         addSection(ev){
             const data = new FormData(ev.target);
             const dataJson = Object.fromEntries(data.entries());
-            fetch("https://sohamk.pythonanywhere.com/sections/add_section",{
+            fetch("https://bookit-v2-s4t8.onrender.com/sections/add_section",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",

@@ -74,7 +74,7 @@ export default {
         }
     },
     mounted(){
-        fetch("https://sohamk.pythonanywhere.com/auth/myinfo",{
+        fetch("https://bookit-v2-s4t8.onrender.com/auth/myinfo",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default {
             this.usr_id = data.user_details.usr_id;
         })
         .catch(err => console.log(err))
-        fetch("https://sohamk.pythonanywhere.com/sections",{
+        fetch("https://bookit-v2-s4t8.onrender.com/sections",{
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

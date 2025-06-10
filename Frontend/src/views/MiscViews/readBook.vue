@@ -24,7 +24,7 @@
 export default {
     name: 'readBook',
     mounted() {
-        fetch("https://sohamk.pythonanywhere.com/books",{
+        fetch("https://bookit-v2-s4t8.onrender.com/books",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

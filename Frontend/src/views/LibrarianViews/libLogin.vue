@@ -43,7 +43,7 @@ methods:{
       const data = new FormData(ev.target);
       const dataJson = Object.fromEntries(data.entries());
       const dataToSend = JSON.stringify({...dataJson, role: 'librarian'});
-      fetch('https://sohamk.pythonanywhere.com/auth/lib/login', {
+      fetch('https://bookit-v2-s4t8.onrender.com/auth/lib/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
