@@ -38,6 +38,10 @@ app.register_blueprint(book_bprint,url_prefix='/books')
 app.register_blueprint(lib_bprint,url_prefix='/lib')
 app.register_blueprint(author_bprint,url_prefix='/authors')
 
+@app.route('/')
+def index():
+    return jsonify({"message": "Welcome to the Library Management System API"}), 200
+
 @jwt.user_lookup_loader
 def user_lkup_handler(_jwt_header, jwt_data):
     identity = jwt_data["sub"]
