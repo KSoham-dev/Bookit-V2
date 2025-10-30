@@ -68,6 +68,9 @@ def tkn_in_blocklist(jwt_header, jwt_data):
         return True
     return False
 
+@app.route("/ping")
+def ping():
+    return jsonify({"message":"pong"}),200
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0")
